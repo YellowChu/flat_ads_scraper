@@ -22,7 +22,6 @@ collection = db["delete_later"]
 
 url = "https://www.sreality.cz/api/cs/v2/estates?category_main_cb=1&category_sub_cb=4%7C5%7C6%7C7%7C8%7C9%7C10%7C11%7C12%7C16&category_type_cb=1&czk_price_summary_order2=0%7C5500000&locality_district_id=72&locality_region_id=14&per_page=100&tms=1617291082200&usable_area=50%7C10000000000"
 
-
 while True:
     response = requests.get(url)
     if response.status_code == 200:
