@@ -62,7 +62,6 @@ def realityIdnesScrapper(page):
 
     return to_send
 
-
 while True:
     advertsPageOne = realityIdnesScrapper(pageone)
     advertsPageTwo = realityIdnesScrapper(pagetwo)
