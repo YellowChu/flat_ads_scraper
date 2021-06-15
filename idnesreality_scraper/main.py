@@ -6,11 +6,10 @@ import smtplib
 from email.message import EmailMessage
 import os
 
-EMAIL_ADDRESS = 'sender@gmail.com'
-EMAIL_PASSWORD = os.environ.get("email_sender_pw")
+EMAIL_ADDRESS = os.environ.get("EMAIL_SENDER")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PW")
 
-contacts = ['receiver1@mail.com', 'receiver2@email.com']
-# contacts = ['dejv.nguyen@gmail.com']
+contacts = [os.environ.get("EMAIL_RECEIVER")]
 
 msg = EmailMessage()
 msg['From'] = EMAIL_ADDRESS
@@ -20,10 +19,6 @@ msg['Subject'] = 'Nové byty z Reality Idnes'
 cluster = MongoClient(os.environ.get("MONGODB_CLIENT"))
 db = cluster["inzeraty"]
 collection = db["delete_later"]
-
-# pageone = "https://reality.idnes.cz/s/prodej/byty/cena-do-5300000/brno/?s-qc%5BsubtypeFlat%5D%5B0%5D=2k&s-qc%5BsubtypeFlat%5D%5B1%5D=21&s-qc%5BsubtypeFlat%5D%5B2%5D=3k&s-qc%5BsubtypeFlat%5D%5B3%5D=31&s-qc%5BusableAreaMin%5D=50"
-# pagetwo = "https://reality.idnes.cz/s/prodej/byty/cena-do-5300000/brno/?s-qc%5BsubtypeFlat%5D%5B0%5D=2k&s-qc%5BsubtypeFlat%5D%5B1%5D=21&s-qc%5BsubtypeFlat%5D%5B2%5D=3k&s-qc%5BsubtypeFlat%5D%5B3%5D=31&s-qc%5BusableAreaMin%5D=50&page=1"
-# pagethree = "https://reality.idnes.cz/s/prodej/byty/cena-do-5300000/brno/?s-qc%5BsubtypeFlat%5D%5B0%5D=2k&s-qc%5BsubtypeFlat%5D%5B1%5D=21&s-qc%5BsubtypeFlat%5D%5B2%5D=3k&s-qc%5BsubtypeFlat%5D%5B3%5D=31&s-qc%5BusableAreaMin%5D=50&page=2"
 
 pageone = "https://reality.idnes.cz/s/prodej/byty/cena-do-5500000/brno/?s-qc%5BsubtypeFlat%5D%5B0%5D=2k&s-qc%5BsubtypeFlat%5D%5B1%5D=21&s-qc%5BsubtypeFlat%5D%5B2%5D=3k&s-qc%5BsubtypeFlat%5D%5B3%5D=31&s-qc%5BsubtypeFlat%5D%5B4%5D=4k&s-qc%5BsubtypeFlat%5D%5B5%5D=41&s-qc%5BsubtypeFlat%5D%5B6%5D=5k&s-qc%5BsubtypeFlat%5D%5B7%5D=atypical&s-qc%5BusableAreaMin%5D=50"
 pagetwo = "https://reality.idnes.cz/s/prodej/byty/cena-do-5500000/brno/?s-qc%5BsubtypeFlat%5D%5B0%5D=2k&s-qc%5BsubtypeFlat%5D%5B1%5D=21&s-qc%5BsubtypeFlat%5D%5B2%5D=3k&s-qc%5BsubtypeFlat%5D%5B3%5D=31&s-qc%5BsubtypeFlat%5D%5B4%5D=4k&s-qc%5BsubtypeFlat%5D%5B5%5D=41&s-qc%5BsubtypeFlat%5D%5B6%5D=5k&s-qc%5BsubtypeFlat%5D%5B7%5D=atypical&s-qc%5BusableAreaMin%5D=50&page=1"
